@@ -49,6 +49,7 @@ pokemonApp.controller('homeController', function($scope, pokemonSrv){
             return defered.promise;
         };
 
+
         this.getPokemonsFromDb = function(databaseURL){
             var deferred = $q.defer();
             var url = databaseURL;
@@ -69,4 +70,5 @@ pokemonApp.controller('homeController', function($scope, pokemonSrv){
     this.addPokemon = function(key, value){
         $http.put('../../' + key, value);
     };
+
 });
