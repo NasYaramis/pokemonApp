@@ -10,7 +10,16 @@
       <a class='btn btn-primary btn-lg' role='button' id='searchButton'>Zoek pokemon</a>
       <br/>
       <br/>
-      <b>Gevonden pokemons : {{ pokemons }}</b>
+      <b>Gevonden pokemons:</b>
+      <div>
+        <ul><li ng-repeat="pokemon in pokemons">
+          <p>Name: {{pokemon.value.name}}</p>
+          <p>Type: {{pokemon.value.type}}</p>
+          <p>Trainer: {{pokemon.value.trainer}}</p>
+          <p>Gender: {{pokemon.value.gender}}</p>
+          <p>Owned: {{pokemon.value.owned}}</p>
+        </li></ul>
+      </div>
     </p>
   </div>
   
