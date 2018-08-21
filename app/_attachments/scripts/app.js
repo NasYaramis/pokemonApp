@@ -14,7 +14,7 @@ pokemonApp.config(function($routeProvider) {
 })
 
 pokemonApp.controller('homeController', function($scope, pokemonSrv){
-    $('#searchPokemon').on('click', function(){
+    $('#searchButton').on('click', function(){
         var url = '../../_design/by_owned/_view/owned?startkey="'+$('#date1').val()+'"$endkey="' +$('#date2').val()+'"';
         pokemonSrv.getPokemonsFromDb(url).then(function succes(data){
             $scope.pokemons = data;
@@ -35,7 +35,7 @@ pokemonApp.controller('homeController', function($scope, pokemonSrv){
         });
     });
 
-    pokemonApp.service('pokemonSrv', fucntion($http, $q){
+    pokemonApp.service('pokemonSrv', function($http, $q){
         this.getPokemonsFromDb = function(url){
             var deferred = $q.defer();
             var url2 = url;
